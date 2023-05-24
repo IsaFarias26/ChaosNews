@@ -1,0 +1,36 @@
+.contenedor{
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    gap: 50px;
+}
+.parrafito{
+    border: 2px solid gray;
+    width: 230px;
+    height: 200px;
+    overflow: hidden;
+}
+.iniciosesion{
+    margin: 40px 30px 40px 30px;
+    overflow: center;
+}
+.logopersona{
+    width: 80px;
+    height: 80px;
+    margin: 100px 500px 20px 630px;
+}
+.Forminicses{
+    border: 2px solid black;
+    width: 190px;
+    margin: 10px 30px 40px 550px;
+    text-align: center;
+    front-family:
+}
+body{
+    background-color:rgb(252, 242, 242) ;
+}
+.col-md-6{
+    margin: 30px 30px 40px 30px;
+}
