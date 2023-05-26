@@ -6,37 +6,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar Usuario</title>
     <link rel="stylesheet" href="estilo.css">
     <script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
-    <title>Iniciar Sesion</title>
     <script>
-        var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
-        $(document).ready(function(){
+      var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
         
-          $("#btnenviar").click(function(){
-            var email = $("#email").val();
-            var contraseña = $("#idpassword").val();
+
+      $(document).ready(function(){
+        
+        $("#btnGuardar").click(function(){
+          var email = $("#email").val();
+          var contraseña = $("#idpassword").val();
         
                     
-            if(email === ''){
+          if(email === ''){
+            $("#err1").fadeIn();
+            return false
+          }else{
+            $("#err1").fadeOut();
+            if(email === '' || ! expr.test(email)){
               $("#err1").fadeIn();
-              return false
-            }else{
-              $("#err1").fadeOut();
-              if(email === '' || ! expr.test(email)){
-                $("#err1").fadeIn();
-                return false;
-                }
-              }
-            if(contraseña === ''){
-              $("#err2").fadeIn();
               return false;
-            }else{
-              $("#err2").fadeOut();
+              }
             }
-          });
+          if(contraseña === ''){
+            $("#err2").fadeIn();
+            return false;
+          }else{
+            $("#err2").fadeOut();
+          }
         });
-      </script>
+          var Usuario = [];
+          var Contraseña = [];
+
+          var Elemail = document.getElementById("email");
+          var LaContraseña = document.getElementById("idpassword");
+
+          function ageregarUsuario(){
+            Usuario.push(email.value);
+          }
+
+          function agregarContraseña(){
+            Contraseña.push(idpassword.value);
+          }
+      });
+    </script>
 </head>
 <body>
     <nav class="navbar navbar-expand-md navbar-light bg-light">
@@ -73,21 +88,19 @@
     <div class="fondo">
         <img src="fondo-borroso-amarillo-119594582.jpg" alt="fondo borroso" height="649px" width="1366px">
         <div class="Forminicses">
-            <h1>Iniciar sesion</h1>
+            <h1>Registrarse</h1>
             <form method="post">
               <div class="txt_field">
                 <input type="text" id="email">
-                <label>Email</label>
+                <label>Ingrese un email</label>
                 <div id="err1" class="error">Ingrese un email valido</div>
               </div>
               <div class="txt_field">
                 <input type="text" id="idpassword">
-                <label>Contraseña</label>
+                <label>Ingrese una contraseña</label>
                 <div id="err2" class="error">Ingrese contraseña</div>
                 </div>
-                <input type="submit" id="btnenviar" value="Enviar">
-                <div class="signup_link">
-                  ¿No eres miembro? <a href="RegistrarUsuario.html">Registrarse</a>
+                <input type="submit" id="btnGuardar" value="Guardar">
                 </div>
             </form>
           </div>
